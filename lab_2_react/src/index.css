@@ -8,3 +8,6 @@
   --color-brand-700: #3730a3;
   --font-display: "Georgia", "Times New Roman", serif;
 }
+
+/* Нічна тема: утиліти dark:* спрацьовують, коли на <body> є клас dark */
+@custom-variant dark (&:where(.dark, .dark *));
