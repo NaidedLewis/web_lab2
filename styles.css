@@ -137,3 +137,163 @@ a:focus-visible {
     padding: 2rem 1rem;
   }
 }
+
+/* ===== Лабораторна №4: нічна тема (клас dark на <body>) ===== */
+body.dark {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #818cf8;
+  --accent-dark: #a5b4fc;
+}
+
+body.dark .card {
+  border-color: #334155;
+}
+
+body.dark #top {
+  background: linear-gradient(135deg, #1e293b, #312e81);
+}
+
+/* Кнопки в шапці */
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  max-width: 960px;
+  margin: -1.5rem auto 1.5rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.9rem;
+  color: #fff;
+  background: rgb(255 255 255 / 0.15);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.btn--primary {
+  width: 100%;
+  background: var(--accent);
+}
+
+.btn--ghost {
+  color: var(--muted);
+  background: transparent;
+}
+
+/* Відгуки */
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.review {
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
+}
+
+body.dark .review {
+  border-color: #334155;
+}
+
+.review p {
+  margin: 0;
+}
+
+.review__name {
+  font-weight: 700;
+}
+
+.review__email {
+  margin-bottom: 0.5rem !important;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+/* Системна інформація у футері */
+.system-info {
+  max-width: 720px;
+  margin: 0.5rem auto 0;
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
+.system-info p {
+  margin: 0.15rem 0;
+}
+
+/* Модальне вікно */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgb(0 0 0 / 0.5);
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal__box {
+  width: 100%;
+  max-width: 420px;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  color: var(--text);
+  background: var(--surface);
+}
+
+.modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (max-width: 640px) {
+  .reviews {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    margin-top: -0.5rem;
+  }
+}
